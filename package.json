@@ -1,0 +1,20 @@
+{
+  "name": "scorekeeper-deploy-test",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Deploy to Cloudflare 按鈕流程的測試範本（hello-world，非正式程式）。",
+  "scripts": {
+    "deploy": "wrangler d1 migrations apply DB --remote && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.158.0"
+  },
+  "cloudflare": {
+    "bindings": {
+      "INSTALL_CODE": {
+        "description": "安裝碼：請自己想一串字（至少 8 個字元，建議 16 個以上），只用來防止別人搶先完成初始化。"
+      }
+    }
+  }
+}
